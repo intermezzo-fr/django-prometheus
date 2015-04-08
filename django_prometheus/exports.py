@@ -25,7 +25,7 @@ def ExportToDjangoView(request):
 
     You can use django_prometheus.urls to map /metrics to this view.
     """
-    metrics_page = generate_latest()
+    metrics_page = prometheus_client.generate_latest()
     return HttpResponse(
         metrics_page,
         content_type=prometheus_client.CONTENT_TYPE_LATEST)
